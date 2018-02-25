@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Learning Jquery Draggable</title>
+		
+		<!-- Specify the character coding for the HTML document -->
+		<meta charset='utf-8'/>
+
+		<!-- Google Fonts integration: http://www.google.com/fonts -->
+		
+		<!-- Normalize to clean up & standardize the browser default styles: https://necolas.github.io/normalize.css/3.0.2/normalize.css -->
+		<link href='css/normalize.css' rel='stylesheet'>
+		
+		<!-- jQuery Core -->
+		<script src='js/vendor/jquery.min.js'></script>
+		
+		<!-- jQuery UI (+ styles)(Google hosted)-->
+		<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+		<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+		
+		<!-- Internal CSS for convenience sake -->
+		<style>
+		
+			#draggable {
+			height: 200px;
+			width: 200px;
+			background: green;
+			color: white;
+			font-weight: bold;
+			text-align: center;
+			line-height: 200px;
+			}
+			
+			#resizable {
+			height: 200px;
+			width: 200px;
+			background: red;
+			color: white;
+			font-weight: bold;
+			text-align: center;
+			line-height: 200px;
+			}
+		
+			#target {
+				height: 200px;
+				width: 400px;
+				margin: 40px;
+				border: 1px solid black;
+			}
+			
+		</style>
+		
+	</head>
+		
+	<body>
+		
+		<div id='draggable'>Drag me around!</div>
+		<div id='resizable'>Resize me!</div>
+	
+		<div id='target'></div>
+		
+		<script>
+			
+			$('#draggable').draggable();
+			$('#resizable').resizable();
+			
+			$('#target').droppable({
+				drop: function(ui, event) {
+				
+					alert('dropped');
+					$('#target').css('background', 'red');
+				
+				}
+		
+			});
+			
+		</script>
+	
+	</body>
+</html>

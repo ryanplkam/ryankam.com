@@ -1,0 +1,643 @@
+/* 
+	Hello Beautiful Mini Project
+	============================
+	Ryan Kam
+	October 2015
+	
+	Colours
+	=======
+	Peach:			FFCCAD
+	Light Green:	D0ECA0
+	Orange:			FF7568
+	Light Green:	A8FFB6
+	Dark Green:		53CC3F
+*/
+
+/* General Styles */
+@font-face {
+    font-family: 'bebas_neue_regularregular';
+    src: url('bebasneue-webfont.eot');
+    src: url('fonts/bebasneue-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/bebasneue-webfont.woff2') format('woff2'),
+         url('fonts/bebasneue-webfont.woff') format('woff'),
+         url('fonts/bebasneue-webfont.ttf') format('truetype'),
+         url('fonts/bebasneue-webfont.svg#bebas_neue_regularregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+	font-family: 'Open Sans', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6, p, span, blockquote{
+	padding: 0;
+	margin: 0; /* Simple CSS Reset for common elements*/
+}
+
+p {
+	font-size: 1em;
+}
+
+h1 {
+	font-weight: 600;
+	font-size: 2.6em;
+}
+
+h2 {
+	font-weight: 600;
+	font-size: 2.2em;
+}
+
+h3 {
+	font-weight: 600;
+	font-size: 1.8em;
+}
+
+h4 {
+	font-weight: 400;
+	font-size: 1.5em;
+}
+
+h5 {
+	font-weight: 400;
+	font-size: 1.125em;
+}
+
+ul {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+	font-size: 1em;
+}
+
+blockquote {
+  quotes: "\201C""\201D""\2018""\2019";
+  margin: 0;
+  position: relative;
+}
+
+.float-left {
+	float: left;
+}
+
+.float-right {
+	float: right;
+}
+
+/* General Styles > Containers/Columns */
+
+.container {
+	width: 1000px;
+	margin: 0 auto;
+	padding: 30px 0;
+	display: block;
+}
+
+.col-one-third {
+	width: 33%;
+	margin: 0 0.15% 0;
+	box-sizing: border-box;
+}
+
+.col-two-third {
+	width: 66%;
+	margin: 0 0.33% 0;
+	box-sizing: border-box;
+}
+
+.col-one-sixth {
+	width: 16%;
+	margin: 0 0.33% 0;
+	box-sizing: border-box;
+}
+
+.col-50 {
+	width: 48%;
+	margin: 0 1% 0;
+	box-sizing: border-box;
+}
+
+.col-100 {
+	width: 100%;
+	box-sizing: border-box;
+}
+
+.col-80 {
+	width: 80%;
+	box-sizing: border-box;
+}
+
+.col-20 {
+	width: 20%;
+	box-sizing: border-box;
+}
+
+.col-25 {
+	width: 25%;
+	box-sizing: border-box;
+}
+
+.col-60 {
+	width: 60%;
+	box-sizing: border-box;
+}
+
+.col-40 {
+	width: 40%;
+	box-sizing: border-box;
+}
+
+/* Hero Div > General Styles */
+
+.hero {
+	background: url('../images/background-1.jpg') center center no-repeat;
+	background-size: cover;
+	color: #fff;
+}
+
+/* Hero > Header General Styles */
+
+.hero-header {
+	text-align: center;
+	padding-top: 30px;
+	/* Move content in Hero up and down */
+}
+
+.hero-header nav {
+	font-weight: bold;
+}
+
+.hero-header nav ul {
+	display: inline-block;
+	padding-left: 0;
+}
+
+.hero-header nav ul li {
+	display: inline-block;
+}
+
+/* Hero > Header > Nav Bar Left */
+
+.hero-header-nav.float-left li {
+	padding-right: 35px;
+}
+
+/* Hero > Header > Nav Bar Right */
+
+.hero-header-nav.float-right li {
+	padding-left: 35px;
+}
+
+.hero-header-nav.float-right a.button-secondary {
+	padding: 9px 17px;
+}
+
+/* Hero > Body General Styles */
+
+.hero-body{
+	margin-top: 0; /* Move Hero content body up or down */
+	padding-bottom: 0;
+}
+
+/* Hero > Body > Left */
+
+.hero-body .col-60 p{
+	margin: 30px 0 50px;
+	font-size: 1.2em
+}
+
+/* Hero-1 > Body > Right */
+
+.iphone-main {	
+	background: url('../images/iphone.png') top center no-repeat;
+	padding: 520px 0 50px 0; /* Lots of padding at the top to accommodate the iphone graphic */
+	text-align: center;
+	position: relative;
+	right: -10px; /* Line up the iphone graphic with the container since the image itself has invisible padding all around */
+}
+
+/* Publicity Div */
+
+.publicitydiv {
+	background: #FF7568;
+}
+
+.publicitydiv .container {
+	padding: 35px 0 32px;
+}
+
+.publicitydiv img {
+	float: left;
+	padding-right: 75px;
+	filter: grayscale(100%);
+}
+
+.publicitydiv img[src*='tech-crunch'] {
+	height: 45px;
+	margin-top: -5px;
+}
+
+.publicitydiv img[src*='beat'] {
+	margin-top:;
+}
+
+.publicitydiv img[src*='code'] {
+	margin-top:;
+}
+
+.publicitydiv img[src*='startx'] {
+	margin-top:;	
+}
+
+.publicitydiv img[src*='combinator'] {
+	margin-top: 5px;
+}
+
+.publicitydiv img:nth-of-type(6) {
+	padding-right: 0;
+}
+
+/* Blurb Div > General Styles */
+
+.blurbdiv {
+	background: #F4F4F6;
+}
+
+.blurbdiv .container {
+	padding: 50px 0 0;	
+}
+
+.blurbdiv img, .blurbdiv .col-80 {
+	box-sizing: border-box;
+	display: inline-block;
+	float: left;
+}
+
+.blurbdiv img {
+	height: 192px;
+}
+
+.blurbdiv p {
+	line-height: 1.85;
+	padding: 16px 0;
+}
+
+.blurbdiv .col-100 { 
+	padding: 0 0 50px 0; /* 50px beneath each 100% container */
+}
+
+.blurbdiv .col-80 {
+	padding: 0 40px; /* Padding between text and icons  */
+}
+
+.blurbdiv > div > div:nth-child(2) > div {
+	padding-left: 0px; /* Except for the middle block of text */
+}
+
+.blurbdiv .icon-1 {
+	background: url('../images/code.png') left center no-repeat;
+	background-size: 200px;
+}
+
+.blurbdiv a:hover{
+	border-bottom: 1px solid #000;
+}
+
+/* Quote Divs > General Styles */
+
+.quotediv {
+	font-family: 'Open Sans', serif;
+	background: #FFCCAD;
+	text-align: center;
+}
+
+blockquote:before, blockquote:after {
+	float: left;
+	width: 15%;
+	font-size: 200px;
+	margin-top: -50px;
+	font-family: Georgia, serif;
+}
+
+blockquote:before {
+	content: open-quote;
+}
+
+blockquote:after {
+	content: close-quote;
+}
+
+blockquote p {
+	float: left;
+	font-size: 1.6em;
+	width: 70%;
+	font-style: italic;
+}
+
+.quotediv h2 {
+	text-align: center;
+	padding-bottom: 30px;
+}
+
+.quotediv h3 {
+	float: right;
+	margin: -40px 60px 0 0;
+	padding-bottom: 20px;
+	font-weight: 400;
+	text-align: left;
+}
+
+.quotediv .container{
+	padding: 40px 0 10px;
+}
+
+.bxslider {
+    list-style:none;
+    margin:0;
+    padding:0
+} /* Fix the slider cutting off stuff at the bottom */
+
+/* Slideshow > General Styles */
+
+.slideshow {
+	text-align: center;
+	background: #F4F4F6;
+}
+
+.slideshow h2, .slideshow .container > p {
+	padding: 30px 0;
+}
+
+.slideshow .container .link:hover {
+	border-bottom: 1px solid #000;
+}
+
+.slideshow .container {
+	padding: 0;
+}
+
+.slideshow .container .clearfix > div {
+	position: relative;
+	width: 25%;
+	height: 550px;
+	box-sizing: border-box;
+} /* Image wrapper styles */
+
+.slideshow .container .clearfix > div > span {
+	position: absolute;
+	top: 0;
+	display: block;
+	font-family: 'bebas_neue_regularregular', sans-serif;
+	width: 100%;
+	color: transparent;
+} /* Text span styles */
+
+.slideshow .container .clearfix > div > span h5 {
+	margin-top: 200px;
+	font-size: 5.3em;
+}
+
+.slideshow .container .clearfix > div > span p {
+	font-size: 2em;
+}
+
+.slideshow .container .clearfix * {
+	transition: all 0.25s ease-in-out;
+}
+
+.slideshow .slide-img {
+	height: 100%;
+}
+
+.slideshow .slide-wrapper:hover  .slide-img{
+	opacity: 0.4;
+}
+
+.slideshow .slide-wrapper:hover .slide-text h5, .slideshow .slide-wrapper:hover .slide-text p{
+	color: #000;
+}
+
+.slide-img-1 {
+	background: url('../images/godfrey2.jpg') 54% 0% no-repeat;
+}
+
+.slide-img-2 {
+	background: url('../images/ryan.jpg') 72% 0% no-repeat;
+}
+
+.slide-img-3 {
+	background: url('../images/choisiwon.jpg') 37% 0% no-repeat;
+}
+
+.slide-img-4 {
+	background: url('../images/daniel.jpg') 55% 40% no-repeat;
+}
+
+/* E-mail subscribe > General Styles */
+
+.subscribediv {
+	box-sizing: border-box;
+	text-align: center;
+	background: #FFCCAD;
+}
+
+.subscribediv .col-50 {
+	margin: 0 auto;
+	padding-bottom: 10px;
+}
+
+.subscribediv .col-50 p {
+	padding-bottom: 30px;
+}
+
+.subscribediv .col-50 h2 {
+	padding-bottom: 20px;
+}
+
+.subscribediv .col-50 input {
+	box-sizing: border-box;
+	float: left;
+	border: none;
+	height: 50px;
+}
+
+.subscribediv .col-50 .email-input {
+	width: 60%;
+	padding: 10px;
+	text-align: left;
+}
+
+.subscribediv .col-50 .email-submit {
+	width: 35%;
+	margin-left: 5%;
+	background: #FF7568;
+}
+
+/* Pricing Div > General Styles */
+
+.pricingdiv .plan-variant{
+	border: 1px solid grey;
+	background: #EBEBEB;
+	border-radius: 3px;
+	position: relative;
+	height: 550px;
+	width: 100%;
+	text-align: center;
+}
+
+.pricingdiv {
+	background: #F4F4F6;
+	text-align: center;
+}
+
+.pricingdiv .container > h2 {
+	padding-bottom: 10px;
+}
+
+.pricingdiv .container > p {
+	padding-bottom: 20px;
+}
+
+.pricingdiv .col-one-third {
+	float: left;
+	text-align: center;
+	padding: 0 20px;
+	margin-top: 20px;
+}
+
+.pricingdiv .col-one-third ul{
+	text-align: left;
+	list-style: disc;
+	line-height: 2em;
+	font-size: 1em;
+}
+
+.pricingdiv .col-one-third h5{
+	margin: 20px 0 5px;
+	text-transform: uppercase;
+	font-weight: 600;
+}
+
+.pricingdiv .col-one-third h2{
+	font-size: 2.7em;
+}
+
+.pricingdiv .col-one-third h1{
+}
+
+.pricingdiv .col-one-third .plan-variant span:nth-of-type(1){
+	text-transform: uppercase;
+	line-height: 2.7em;
+	font-size: 0.8em;
+	font-weight: bold;
+	display: block;
+	background: #FFCCAD;
+}
+
+.pricingdiv .pricing-button {
+	position: absolute;
+	height: 55px;
+	left: 20px;
+	right: 20px;
+	bottom: 20px;
+	background: #FF7568;
+	line-height: 55px;
+	font-size: 1.1em;
+	border: none;
+}
+
+/* Footer > General Styles */
+
+.footer {
+	background: #FFCCAD;
+}
+
+.footer h5 {
+	font-weight: 700;
+	text-transform: uppercase;
+}
+
+.footer ul {
+	padding-left: 0;
+}
+
+.footer ul li {
+	line-height: 1.90;
+}
+
+.footer .container {
+	padding-top: 46px; /* Move content in footer up and down */
+	position: relative;
+}
+
+.footer .col-50 {
+	position: absolute;
+	bottom: 0; 
+	margin-bottom: 46px;
+}
+
+.backtotop {
+	background: #FF7568 url('../images/chevron-up.png') no-repeat;
+	background-size: 32px 32px;
+	background-position: center;
+	height: 60px;
+	width: 60px;
+	margin-bottom: 30px;
+}
+
+/* Button Styles */
+
+.button {
+	padding: 14px 19px;
+	text-decoration: none;
+}
+
+.button-primary {
+	background: #FFCCAD;
+	border: 2px solid #FFCCAD;
+	color: #000;
+	margin: 0 30px 0 0;
+	font-weight: 600;
+}
+
+.button-primary:hover {
+	background: #fff;
+	border: 2px solid #FFF;
+}
+
+.button-secondary {
+	color: #fff;
+	text-decoration: none;
+	border: 2px solid #fff;
+	font-weight: 600;
+}
+
+.button-secondary:hover {
+	color: #000;
+	background: #fff;
+}
+
+.link {
+	padding-bottom: 2px;
+}
+
+.link:hover {
+	border-bottom: 1px solid #fff;
+}
+
+/* Force Elements to Self Clear its Children: http://css-tricks.com/snippets/css/clear-fix/ */
+
+.clearfix:after {
+	visibility: hidden;
+	display: block;
+	content: "";
+	clear: both;
+	height: 0;
+	}
+* html .group             { zoom: 1; } /* IE6 */
+*:first-child+html .group { zoom: 1; } /* IE7 */
+

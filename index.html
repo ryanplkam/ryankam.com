@@ -1,0 +1,66 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="apple-touch-icon" href="apple-touch-icon.png">
+        <!-- Place favicon.ico in the root directory -->
+
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/main.css">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:200,400|Roboto:700,500" rel="stylesheet">
+    </head>
+    <body>
+        <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        
+        <div class="container">
+            <div class="left">
+                ryan<br>kam
+            </div>
+            <div class="right">
+                Hi! I'm a front end web developer based in Toronto. Check out some <a href="http://www.fountain.co">stuff</a> <a href="y-randomizer/index.html">I've</a> <a href="http://snazzy-contacts.herokuapp.com/">built</a> or just <a href="https://www.linkedin.com/in/ryanplkam" class="contact">say</a>
+                <div class="tooltip-container">
+                    <a class="email-tooltip-hover">hi</a>.
+                    <span class="email-tooltip">ryanplkam@gmail.com</span>
+                </div>
+                
+            </div>
+
+        </div>
+        <script>
+            // Declare variables
+            let tooltip = document.querySelector('.email-tooltip');
+            let tooltipContainer = document.querySelector('.tooltip-container')
+            let isTooltipHovering = false;
+
+            // Tool tip hover handlers
+            function handleMouseEnter() {
+                isTooltipHovering = true;
+                tooltip.classList.add('hovered');
+                setTimeout(function() {
+                    isTooltipHovering && tooltip.classList.add('active')
+                }, 5)
+            }
+
+            function handleMouseLeave() {
+                isTooltipHovering = false;
+                tooltip.classList.remove('active')
+                setTimeout(function() {
+                    !isTooltipHovering && tooltip.classList.remove('hovered')
+                }, 300)
+            }
+
+            // Hook up event listeners
+            tooltipContainer.addEventListener('mouseenter', handleMouseEnter);
+            tooltipContainer.addEventListener('mouseleave', handleMouseLeave);
+
+        </script>
+    </body>
+
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Learning Jquery UI (Accordion)</title>
+		
+		<!-- Specify the character coding for the HTML document -->
+		<meta charset='utf-8'/>
+
+		<!-- Google Fonts integration: http://www.google.com/fonts -->
+		
+		<!-- Normalize to clean up & standardize the browser default styles: https://necolas.github.io/normalize.css/3.0.2/normalize.css -->
+		<link href='css/normalize.css' rel='stylesheet'>
+		
+		<!-- jQuery Core -->
+		<script src='js/vendor/jquery.min.js'></script>
+		
+		<!-- jQuery UI (+ styles)(Google hosted)-->
+		<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+		<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+		
+		<!-- Internal CSS for convenience sake -->
+		<style>
+		
+			li {
+				border: 2px solid black;
+				margin: 4px;
+				width: 200px;
+			}
+			
+		</style>
+		
+	</head>
+		
+	<body>
+		
+		<ul id='sortable'>
+			<li>Sushi</li>
+			<li>Ramen</li>
+			<li>Pizza</li>
+			<li>Xiao Long Bao</li>
+		</ul>
+		
+		<script>
+			
+			$('#sortable').sortable();
+			
+		</script>
+	
+	</body>
+</html>

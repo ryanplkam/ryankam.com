@@ -1,0 +1,105 @@
+/* Header Styles */
+			
+			.header {
+				height: 50px;
+				text-align: center; /* To center the toggle-buttons div which is display: inline-block */
+				background-color: #EEEDEF;
+				border-bottom: 1px solid grey;
+			}
+			
+			.header-brand {
+				float: left;
+				padding: 0 0 0 20px;
+				margin: 0; /* Zero the default margin */
+				line-height: 50px;
+				font-weight: bold;
+			}
+			
+			.header-run-button {
+				float: right;
+				padding: 2px 4px;
+				margin: 11px 20px 0 0;
+			}
+			
+			.header-toggles {
+				padding: 0;
+				margin: 12px 0 0 0;
+				display: inline-block;
+				list-style: none;
+				border: 1px solid grey;
+				border-radius: 3px;
+			}
+			
+			.header-toggles li {
+				float: left; /* To remove the space between list elements */
+				padding: 5px 8px;	
+				line-height: 100%;
+				border-right: 1px solid grey;
+			}
+			
+			.header-toggles li:last-child{
+				border-right: none;
+			}
+			
+			.header-toggle-button:hover {
+				background: #D9D9D9;
+				cursor: pointer;
+			}
+
+			.toggled {
+				background: #EAF3FF;
+			}
+			
+			.toggled:hover {
+				background: #F5F9FF;
+				cursor: pointer;
+			}
+			
+			/* Body Styles */
+			
+			.code-container {
+				position: relative;
+				float: left;
+				width: 50%;
+				height: 100%;
+				font-family: monotype;				
+			}
+			
+			.code-container div {
+				position: absolute;
+				right: 7px;
+				top: 8px;
+			}
+			
+			.code-container textarea {
+				box-sizing: border-box;
+				height: 100%;
+				width: 100%;
+				border: none;
+				border-right: 1px solid grey;
+				font-family: monotype;
+				padding: 5px;
+			}
+			
+			#CSS-container, #JS-container {
+				display: none;
+			}
+			
+			iframe {
+				height: 100%;
+				width: 100%;
+				margin-left: 0px;
+				border: none;
+			}
+			
+			/* Force Elements to Self Clear its Children: http://css-tricks.com/snippets/css/clear-fix/ */
+
+			.clearfix:after {
+				visibility: hidden;
+				display: block;
+				content: "";
+				clear: both;
+				height: 0;
+			}
+			* html .group             { zoom: 1; } /* IE6 */
+			*:first-child+html .group { zoom: 1; } /* IE7 */

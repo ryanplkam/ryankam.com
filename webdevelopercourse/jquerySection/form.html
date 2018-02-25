@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Learning Jquery</title>
+		
+		<!-- Specify the character coding for the HTML document -->
+		<meta charset='utf-8'/>
+
+		<!-- Google Fonts integration: http://www.google.com/fonts -->
+		
+		<!-- Normalize to clean up & standardize the browser default styles: https://necolas.github.io/normalize.css/3.0.2/normalize.css -->
+		<link type='text/css' href='css/normalize.css' rel='stylesheet'>
+		
+		<!-- Custom CSS -->
+		<link type='text/css' href='css/styles.css' rel='stylesheet'>
+		
+		<!-- JS/jQuery -->
+		<script type='text/javascript' src='jquery/jquery.min.js'></script>
+		
+	</head>
+		
+	<body>
+		
+		<div class='container'>
+			
+			<div id='error'></div>
+			
+			<form id='validation-form'>
+
+				<label for='email'>Email</label>
+				<input name='email' id='email'>
+			
+				<label for='phone'>Phone</label>
+				<input name='phone' id='phone'>
+				
+				<label for='password'>Password</label>
+				<input type='password' name='password' id='pass-1'>
+				
+				<label for='password'>Confirm Password</label>
+				<input type='password' name='password' id='pass-2'>
+				
+				<input id='submit-button' type='submit' value='Submit'>
+		
+			</form>
+		
+		</div>
+		
+		<script>
+
+			$('#validation-form').submit(function(event) {
+				
+				var errorMessage=""; /* Create an empty error message variable */
+				
+				event.preventDefault(); /* Prevent the form from submitting */
+				
+				function isValidEmailAddress(emailAddress) {
+					var pattern = /^([a-z\d!#$%&'*+\-\/=?^_`{|}~\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]+(\.[a-z\d!#$%&'*+\-\/=?^_`{|}~\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]+)*|"((([ \t]*\r\n)?[ \t]+)?([\x01-\x08\x0b\x0c\x0e-\x1f\x7f\x21\x23-\x5b\x5d-\x7e\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]|\\[\x01-\x09\x0b\x0c\x0d-\x7f\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]))*(([ \t]*\r\n)?[ \t]+)?")@(([a-z\d\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]|[a-z\d\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF][a-z\d\-._~\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]*[a-z\d\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])\.)+([a-z\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]|[a-z\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF][a-z\d\-._~\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]*[a-z\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])\.?$/i;
+					return pattern.test(emailAddress);
+				}; /* Email validation code from stackoverflow */
+			
+				if( !isValidEmailAddress( $('#email').val() ) ) {
+					
+					errorMessage='Please enter a valid email address';
+					
+				}; /* Validates email input */
+				
+				if ( !$.isNumeric( $('#phone').val() ) ) {
+					
+					errorMessage=errorMessage+'<br>Please enter a valid phone number';
+					
+				}; /* Validates phone input */
+				
+				if ( ($('#pass-1').val()) !== ($('#pass-2').val()) ) {
+				
+					errorMessage=errorMessage+'<br>Please re-confirm password';
+				
+				} /* Validates matching passwords */
+				
+				
+				
+				$('#error').html(errorMessage); /* Updates error text above form */
+				
+				if (errorMessage == "") {
+					
+					errorMessage = 'Form submitted successfully!' /* Store new message in the errorMessage variable */
+					$('#error').css('color', 'green'); /* Change the color of the errorMessage variable to green */
+					$('#error').html(errorMessage); /* Display the errorMessage variable */
+				
+				}
+				
+			}); /* End code that runs when submit is pressed */
+		
+		</script>
+	
+	</body>
+</html>

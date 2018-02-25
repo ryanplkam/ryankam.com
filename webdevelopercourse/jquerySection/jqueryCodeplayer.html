@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html class="no-js" lang="">
+	<head>
+		<title>Codeplayer Mini Project</title>
+		<meta charset='utf-8'/>
+		<meta http-equiv="x-ua-compatible" content="ie=edge">
+		<meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		<link rel="apple-touch-icon" href="apple-touch-icon.png">
+        <!-- Place favicon.ico in the root directory -->
+		
+		<link rel="stylesheet" href="css/normalize.css"><!-- Normalize -->
+		<link rel="stylesheet" href="css/main.css"><!-- Boilerplate Main -->
+		<link rel='stylesheet' href='css/styles.css'><!-- Custom CSS -->
+		
+        <script src="js/vendor/modernizr-2.8.3.min.js"></script><!-- Modernizr -->
+
+	</head>
+		
+	<body>
+		
+		<div class='header'>
+			
+			<p class='header-brand'>CodePlayer</p><!-- Floated elements first -->
+		
+			<button class='header-run-button'><!-- Floated elements first-->
+				Run
+			</button>
+			
+			<ul class='header-toggles'><!-- Not floated; placed after floated elements so it doesn't push them down the page -->
+				<li class='header-toggle-button toggled' id='html-button'>HTML</li>
+				<li class='header-toggle-button' id='css-button'>CSS</li>
+				<li class='header-toggle-button' id='js-button'>JS</li>
+				<li class='header-toggle-button toggled' id='result-button'>Result</li>
+			</ul>
+			
+		</div><!-- End header -->
+		
+		<div class='body clearfix'>
+		
+			<div class='code-container' id='HTML-container'>
+				<div>HTML</div>
+				<textarea><div id='tester'>Watsup David?</div></textarea>
+			</div>
+			
+			<div class='code-container' id='CSS-container'>
+				<div>CSS</div>
+				<textarea>html {background-color: grey;}</textarea>
+			</div>
+			
+			<div class='code-container' id='JS-container'>
+				<div>JS</div>
+				<textarea>alert(document.getElementById('tester').innerHTML);</textarea>
+			</div>
+			
+			<div class='code-container' id='Result-container'>
+				<div>Result</div>
+				<iframe id='Result-frame'></iframe>
+			</div>
+
+		</div><!-- End body -->
+		
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script><!-- Google hosted jQuery -->
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery.min.js"><\/script>')</script><!-- Local jQuery fallback -->
+        <script src="js/plugins.js"></script><!-- Boilerplate JS plugins -->
+        <script src="js/main.js"></script><!-- Boilerplate JS main -->
+		
+		<script>
+			
+			/* Set the height of the code-containers equal to the available space in the window */
+			var headerHeight = $('.header').height();
+			var windowHeight = $(window).height();
+			var codeContainerHeight = windowHeight - headerHeight;
+			$('.code-container').height(codeContainerHeight+'px');
+			
+			$('.header-toggle-button').click(function() {
+			
+				/* Toggles styles on the clicked button */				
+				$(this).toggleClass('toggled');
+				
+				/* Toggles visibility of clicked div on and off */
+				var clickedDiv = '#'+$(this).html()+'-container';
+				$(clickedDiv).toggle(); 
+				
+				/* Set code-container width according to # of visible code-containers */
+				var showingDivs = $('.code-container').filter(function() {
+					return $(this).css('display')!='none';
+				}).length;
+				var width=100/showingDivs;
+				
+				$('.code-container').width(width+'%');
+				
+			});
+
+			/* Run button */
+			$('.header-run-button').click(function() {
+					
+				var storedHTML = $('#HTML-container textarea').val();
+				var storedCSS = $('#CSS-container textarea').val();
+				var storedJS = $('#JS-container textarea').val();
+				
+				$('iframe').contents().find('html').html('<style>'+storedCSS+'</style>'+storedHTML);
+				
+				document.getElementById('Result-frame').contentWindow.eval(storedJS);
+				
+			});
+			
+		</script>
+	
+	</body>
+</html>
