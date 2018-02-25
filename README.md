@@ -1,2 +1,2 @@
 # ryankam.com
-Personal website
+My little corner of the web.
